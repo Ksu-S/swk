@@ -15,10 +15,6 @@ class QuizConversation extends Conversation
      */
     public function run()
     {
-    	$this->quizQuestions = Question::all()
-            ->shuffle();
-        $this->questionCount = $this->quizQuestions->count();
-        $this->quizQuestions = $this->quizQuestions->keyBy('id');
         $this->showInfo();
     }
     protected $questionCount = 0;

@@ -9,6 +9,6 @@ $botman->hears('Hi', function (BotMan $bot) {
     $bot->reply('Hello!');
 });
 
-$botman->hears('start', function (BotMan $bot) {
+$botman->hears('/start', function (BotMan $bot) {
     $bot->startConversation(new QuizConversation());
 });

@@ -124,7 +124,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-        Telegram\Bot\Commands\HelpCommand::class,
+        App\Conversations::class,
         Vendor\Project\Commands\StartCommand::class,
         Vendor\Project\Commands\SettingsCommand::class,
         Illuminate\Auth\AuthServiceProvider::class,

@@ -124,7 +124,6 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-        App\Conversations::class,
         Vendor\Project\Commands\StartCommand::class,
         Vendor\Project\Commands\SettingsCommand::class,
         Illuminate\Auth\AuthServiceProvider::class,

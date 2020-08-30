@@ -7,3 +7,4 @@ $botman->hears('Hi', function ($bot) {
     $bot->reply('Hello!');
 });
 $botman->hears('Start conversation', BotManController::class.'@startConversation');
+$botman->hears('/start', function ( $bot ) { $bot->startConversation ( new mainConversation ); } );

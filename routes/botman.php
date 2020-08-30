@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\BotManController;
+use App\Conversations\mainConversation;
 
 $botman = resolve('botman');
 

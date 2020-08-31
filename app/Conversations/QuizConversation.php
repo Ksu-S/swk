@@ -2,7 +2,14 @@
 
 namespace App\Conversations;
 
+use App\Answer;
+use App\Played;
+use App\Question;
+use App\Highscore;
+use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Conversations\Conversation;
+use BotMan\BotMan\Messages\Incoming\Answer as BotManAnswer;
+use BotMan\BotMan\Messages\Outgoing\Question as BotManQuestion;
 
 class QuizConversation extends Conversation
 {

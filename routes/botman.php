@@ -12,3 +12,7 @@ $botman->hears('Hi', function (BotMan $bot) {
 $botman->hears('/start', function (BotMan $bot) {
     $bot->startConversation(new QuizConversation());
 });
+
+$botman->hears('/highscore|highscore', function (BotMan $bot) {
+    $bot->startConversation(new HighscoreConversation());
+})->stopsConversation();

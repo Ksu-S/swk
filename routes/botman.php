@@ -2,6 +2,7 @@
 
 use BotMan\BotMan\BotMan;
 use App\Conversations\QuizConversation;
+use App\Conversations\HighscoreConversation;
 
 $botman = resolve('botman');
 

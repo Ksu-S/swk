@@ -26,7 +26,10 @@ class NewsConversation extends Conversation
         if($i > 10){
                 break;
         }
-        $this->say('"\xE2\x9E\xA1".$item->title."\nDate: ".$item->pubDate."(<a href='".$item->link."'>Read more</a>)\n\n"');
+        $reply .="\xE2\x9E\xA1".$item->title."\nDate: ".$item->pubDate."(<a href='".$item->link."'>Read more</a>)\n\n";
+    }
+    $this->say(['chat_id' => $chat_id, 'parse_mode' => 'HTML', 'disable_web_page_preview' => true, 'text' => $reply]);
+    
     }
 
 }

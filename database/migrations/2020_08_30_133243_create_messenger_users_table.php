@@ -31,3 +31,5 @@ class CreateMessengerUsersTable extends Migration
         Schema::dropIfExists('messenger_users');
     }
 }
+
+

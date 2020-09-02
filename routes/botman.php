@@ -7,6 +7,7 @@ use App\Conversations\WelcomeConversation;
 use App\Conversations\PrivacyConversation;
 use App\Conversations\HighscoreConversation;
 use App\Http\Middleware\PreventDoubleClicks;
+use App\Conversations\NewsConversation;
 
 $botman = resolve('botman');
 
@@ -21,6 +22,10 @@ $botman->hears('Hi', function (BotMan $bot) {
 
 $botman->hears('/start', function (BotMan $bot) {
     $bot->startConversation(new WelcomeConversation());
+})->stopsConversation();
+
+$botman->hears('/news|news|новости', function (BotMan $bot) {
+    $bot->startConversation(new NewsConversation());
 })->stopsConversation();
 
 $botman->hears('start|/startQuiz', function (BotMan $bot) {
@@ -38,3 +43,5 @@ $botman->hears('/about|about', function (BotMan $bot) {
 $botman->hears('/deletedata|deletedata', function (BotMan $bot) {
     $bot->startConversation(new PrivacyConversation());
 })->stopsConversation();
+
+

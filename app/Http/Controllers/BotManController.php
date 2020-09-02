@@ -9,9 +9,7 @@ use BotMan\Drivers\Telegram\TelegramDriver;
 
 class BotManController extends Controller
 {
-    /**
-     * Place your BotMan logic here.
-     */
+    
     public function handle()
     {
         //info('Incoming call', \request()->all());
@@ -25,8 +23,8 @@ class BotManController extends Controller
             info('error catched: '.$e->getMessage());
             $fromId = request()->all()['message']['from']['id'] ?? request()->all()['callback_query']['from']['id'];
 
-            $botman->say('🚧 Something did not go as planned. 😕 We are sorry.', $fromId, TelegramDriver::class);
-            $botman->say('Please try to /start the game again or contact Christoph on Twitter https://twitter.com/christophrumpel.',
+            $botman->say('🚧 Что-то пошло не так, как планировалось. 😕 Приносим извинения за неудобства.', $fromId, TelegramDriver::class);
+            $botman->say('Пожалуйста, попробуйте запустить снова командой /start или свяжитесь со мной https://t.me/swksupport.',
                 $fromId, TelegramDriver::class);
 
         }

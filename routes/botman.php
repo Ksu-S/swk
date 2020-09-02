@@ -24,9 +24,9 @@ $botman->hears('/start', function (BotMan $bot) {
     $bot->startConversation(new WelcomeConversation());
 })->stopsConversation();
 
-$botman->hears('/news|news|новости', function (BotMan $bot) {
-    $bot->startConversation(new NewsConversation());
-})->stopsConversation();
+// $botman->hears('/news|news|новости', function (BotMan $bot) {
+//     $bot->startConversation(new NewsConversation());
+// })->stopsConversation();
 
 $botman->hears('start|/startQuiz', function (BotMan $bot) {
     $bot->startConversation(new QuizConversation());

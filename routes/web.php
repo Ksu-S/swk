@@ -22,10 +22,8 @@ use Illuminate\Support\Facades\File;
 
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 Route::get('/botman/tinker', 'BotManController@tinker');
-
-Auth::routes();
  
-Route::group(['middleware' => ['auth', 'instagram']], function(){
+Route::group(['middleware' => ['instagram']], function(){
  
     Route::get('/search', 'AppController@search');
  

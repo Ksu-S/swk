@@ -146,7 +146,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        \SocialiteProviders\Manager\ServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -160,6 +160,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\BotMan\DriverServiceProvider::class,
+        \SocialiteProviders\Manager\ServiceProvider::class,
+        \App\Providers\InstagramServiceProvider::class,
     ],
 
     /*
@@ -208,6 +210,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Instagram' => App\Facades\Instagram::class,
 
     ],
 

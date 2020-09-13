@@ -40,10 +40,10 @@ class WelcomeConversation extends Conversation
         $this->ask($question, function (BotManAnswer $answer) {
             switch ($answer->getValue()) {
                 case 'yes':
-                    $user = Highscore::saveUser($this->bot->getUser(),  $this->bot->getText(), $this->bot->getId(), $this->userCorrectAnswers);
+                    $user = Question::saveUser($this->bot->getUser(),  $this->bot->getText(), $this->bot->getId(), $this->userCorrectAnswers);
                     $this->say("✓");
 
-                    return $this->bot->startConversation(new QuizConversation());
+                    return $this->bot->startConversation(new WelcomeConversation());
                 case 'no':
                     return $this->say('Если решите поменять свое решение, используйте команду /datasave');
                 default:

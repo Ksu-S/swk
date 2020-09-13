@@ -43,7 +43,7 @@ class WelcomeConversation extends Conversation
                     $user = Highscore::saveUser($this->bot->getUser(),  $this->bot->getText(), $this->bot->getId(), $this->userCorrectAnswers);
                     $this->say("✓");
 
-                    return $this->bot->startConversation(new WelcomeConversation());
+                    return $this->bot->startConversation(new QuizConversation());
                 case 'no':
                     return $this->say('Если решите поменять свое решение, используйте команду /datasave');
                 default:

@@ -17,7 +17,6 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->string('text');
             $table->integer('points')->unsigned();
-            $table->string('response'); 
             $table->timestamps();
         });
     }

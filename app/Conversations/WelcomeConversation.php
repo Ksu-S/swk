@@ -24,6 +24,8 @@ class WelcomeConversation extends Conversation
         $this->say('Привет, '.$this->bot->getUser()
                 ->getFirstName().' 👋');
         $this->bot->typesAndWaits(1);
+        $this->askSaveData();
+        $this->bot->typesAndWaits(1);
         $this->askIfReady();
     }
 

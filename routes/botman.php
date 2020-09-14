@@ -19,8 +19,12 @@ $botman->hears('Hi', function (BotMan $bot) {
     $bot->reply('Hello!');
 });
 
-$botman->hears('/start', function (BotMan $bot) {
+$botman->hears('/test|test', function (BotMan $bot) {
     $bot->startConversation(new WelcomeConversation());
+})->stopsConversation();
+
+$botman->hears('/start', function (BotMan $bot) {
+    $bot->startConversation(new StartConversation());
 })->stopsConversation();
 
 $botman->hears('start|/startQuiz', function (BotMan $bot) {

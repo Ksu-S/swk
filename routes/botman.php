@@ -27,7 +27,7 @@ $botman->hears('/start', function (BotMan $bot) {
     $bot->startConversation(new FirstConversation());
 })->stopsConversation();
 
-$botman->hears('start|/startQuiz', function (BotMan $bot) {
+$botman->hears('/startQuiz', function (BotMan $bot) {
     $bot->startConversation(new QuizConversation());
 })->stopsConversation();
 

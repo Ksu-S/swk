@@ -24,38 +24,8 @@ class WelcomeConversation extends Conversation
         $this->say('Привет, '.$this->bot->getUser()
                 ->getFirstName().' 👋');
         $this->bot->typesAndWaits(1);
-        $this->askSaveData();
-        $this->bot->typesAndWaits(1);
         $this->askIfReady();
     }
-
-        private function askSaveData()
-    {
-        $question = Question::create('Бот сохраняет ваше имя, идентификатор чата и ответы на некоторые вопросы, чтобы сделать обучение максимально персональным. В любой момент вы можете удалить свои данные, используя команду /deletedata.')
-            ->addButtons([
-                Button::create('Разрешить')
-                    ->value('yes'),
-                Button::create('Не разрешать')
-                    ->value('no'),
-            ]);
-
-        $this->ask($question, function (BotManAnswer $answer) {
-            switch ($answer->getValue()) {
-                case 'yes':
-                    $user = Question::saveUser($this->bot->getUser(),  $this->bot->getText(), $this->bot->getId(), $this->userCorrectAnswers);
-                    $this->say("✓");
-
-                    return $this->bot->startConversation(new WelcomeConversation());
-                case 'no':
-                    return $this->say('Если решите поменять свое решение, используйте команду /datasave');
-                default:
-                    return $this->repeat('Извините, не понимаю команду. Пожалуйста, используйте кнопки.');
-            }
-        });
-    }
-
-
-
 
     private function askIfReady()
     {
@@ -77,7 +47,7 @@ class WelcomeConversation extends Conversation
             }
 
             $this->say('Ок, может в другой раз.');
-            $this->say('Если вы измените свое мнение, вы можете начать тест в любое время, используя команду /start или набрав «start».');
+            $this->say('Если вы измените свое мнение, вы можете начать тест в любое время, используя команду /test или набрав «test».');
         }, [
             'parse_mode' => 'Markdown',
         ]);

@@ -43,8 +43,7 @@ class mainConversation extends conversation
         ]);
 
         $this->ask($question, function (BotManAnswer $answer) {
-            // здесь можно указать какие либо условия, но нам это не нужно сейчас
-
+  
             array_push ($this->response, $answer);
 
             $this->exit();

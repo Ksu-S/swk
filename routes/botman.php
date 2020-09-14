@@ -7,6 +7,7 @@ use App\Conversations\WelcomeConversation;
 use App\Conversations\PrivacyConversation;
 use App\Conversations\HighscoreConversation;
 use App\Http\Middleware\PreventDoubleClicks;
+use App\Conversations\FirstConversation;
 
 $botman = resolve('botman');
 

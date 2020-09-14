@@ -10,7 +10,7 @@ use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use BotMan\BotMan\Messages\Outgoing\Question as BotManQuestion;
 
-class StartConversation extends Conversation
+class FirstConversation extends Conversation
 {
     /**
      * Start the conversation.

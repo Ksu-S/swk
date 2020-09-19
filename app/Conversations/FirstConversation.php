@@ -46,7 +46,7 @@ class FirstConversation extends Conversation
                     $user = BotManQuestion::saveUser($this->bot->getUser(),  $this->bot->getText(), $this->bot->getId(), $this->userCorrectAnswers);
                     $this->say("✓");
 
-                    return $this->bot->startConversation(new WelcomeConversation());
+                    return $this->bot->startConversation(new FirstConversation());
                 case 'no':
                     return $this->say('Если решите поменять свое решение, используйте команду /datasave');
                 default:

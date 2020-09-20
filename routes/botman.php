@@ -7,7 +7,6 @@ use App\Conversations\WelcomeConversation;
 use App\Conversations\PrivacyConversation;
 use App\Conversations\HighscoreConversation;
 use App\Http\Middleware\PreventDoubleClicks;
-use App\Conversations\FirstConversation;
 
 $botman = resolve('botman');
 
@@ -20,15 +19,11 @@ $botman->hears('Hi', function (BotMan $bot) {
     $bot->reply('Hello!');
 });
 
-$botman->hears('/test|test', function (BotMan $bot) {
+$botman->hears('/start', function (BotMan $bot) {
     $bot->startConversation(new WelcomeConversation());
 })->stopsConversation();
 
-$botman->hears('/start', function (BotMan $bot) {
-    $bot->startConversation(new FirstConversation());
-})->stopsConversation();
-
-$botman->hears('/startQuiz', function (BotMan $bot) {
+$botman->hears('start|/startQuiz', function (BotMan $bot) {
     $bot->startConversation(new QuizConversation());
 })->stopsConversation();
 

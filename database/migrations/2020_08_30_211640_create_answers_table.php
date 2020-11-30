@@ -18,6 +18,7 @@ class CreateAnswersTable extends Migration
         $table->integer('question_id');
         $table->string('text');
         $table->boolean('correct_one');
+        $table->string('explanation');
         $table->timestamps();
     });
     }

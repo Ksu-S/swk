@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/credentials-fc2826bf9932', function () {
-    $json = json_decode(file_get_contents('../translations-fc2826bf9932.json'));
+    return('../translations-fc2826bf9932.json');
 });
 
 use App\User;

@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/credentials-fc2826bf9932', function () {
-    return Redirect::to('../translations-fc2826bf9932.json');
+    return File::get('../translations-fc2826bf9932.json');
 });
 
 use App\User;

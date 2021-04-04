@@ -24,8 +24,7 @@ class FirstConversation extends Conversation
 
     private function welcomeUser()
     {
-        $this->say('Привет, '.$this->bot->getUser()
-                ->getFirstName()->response,.' 👋');
+        $this->say('Привет, '.$this->bot->getUser()->getFirstName()->response.' 👋');
         $this->bot->typesAndWaits(1);
         $this->askSaveData();
     }
